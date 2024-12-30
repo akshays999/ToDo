@@ -5,16 +5,21 @@
   font-family: "Times New Roman", Times, serif;
 }
 
+/* Dark mode */
 body {
-  background: linear-gradient(135deg, rgba(50, 0, 84, 0.814), rgba(91, 0, 0, 0.906));
+  background: linear-gradient(
+    135deg,
+    rgba(50, 0, 84, 0.814),
+    rgba(91, 0, 0, 0.906)
+  );
+  /* transition: background 0.5s ease, color 0.5s ease; */
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
   padding: 10px;
-  background: linear-gradient(45deg, rgb(131, 131, 131), rgb(0, 0, 0));
-
+  background: linear-gradient(45deg,rgb(16, 15, 15), rgb(131, 131, 131) );
 }
 
 .todo-app {
@@ -25,14 +30,28 @@ body {
   padding: 40px 30px 70px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 2rem;
+  position: relative;
+  /* transition: background 0.5s ease, color 0.5s ease; */
 }
 
 .todo-app h1 {
   color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+
+  margin-bottom: 30px;
+  margin-left: 5px;
+}
+
+button.dayNight {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 30px 40px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: none;
 }
 
 .todo-app h1 img {
@@ -41,45 +60,44 @@ body {
 }
 
 .row {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: rgb(255, 255, 255);
-  gap:10px;
+  gap: 10px;
   border-radius: 30px;
-  padding-left: 20px;
+  padding-left: 25px;
   margin-bottom: 25px;
   border: 2px solid rgb(255, 255, 255);
- 
 }
 
 input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 15px;
+  padding: 10px;
   font-weight: 14px;
   font-size: 22px;
   color: rgb(0, 0, 0);
+  /* border:0.5px solid red  */
 }
 
-button {
+.addBtn {
   border: none;
   outline: none;
   padding: 14px 30px;
   background: #000000;
   font-size: 22px;
   border: 2px solid #000000;
-  color:white;
+  color: white;
   cursor: pointer;
-  border-radius:30px;
+  border-radius: 30px;
 }
 
-button:active {
+.addBtn:active {
   border: 2px solid #000000;
   background: #ffffff;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 ul li {
@@ -90,7 +108,7 @@ ul li {
   cursor: pointer;
   display: flex;
   position: relative;
-  color:white;
+  color: white;
 }
 
 ul li::before {
@@ -133,5 +151,73 @@ ul li span {
 
 ul li span:hover {
   background: rgb(255, 255, 255);
-  color:black
+  color: black;
+}
+
+/* light mode */
+
+body.loght-mode{
+  /* transition: background 0.5s ease, color 0.5s ease; */
+}
+
+.light-mode .container{
+  background: linear-gradient(45deg,rgb(0, 109, 164), rgb(133, 227, 255) );
+}
+
+.light-mode .todo-app {
+  background: linear-gradient(45deg, rgb(240, 187, 187), rgb(215, 56, 56));
+  border: 2px solid rgb(0, 0, 0);
+
+}
+
+.light-mode .dayNight {
+  background-color:rgb(219, 73, 73);
+}
+
+
+.light-mode .todo-app h1 {
+  color: rgb(0, 0, 0);
+}
+
+.light-mode .row {
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+}
+
+
+.light-mode .addBtn {
+  background: #e3e3e3;
+  color: rgb(0, 0, 0);
+ border: 2px solid white;
+}
+.light-mode .addBtn:active {
+  background: #c0c0c0;
+
+}
+
+.light-mode ul li {
+  color: rgb(0, 0, 0);
+}
+
+.light-mode ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+.light-mode ul li.checked::before {
+  background-image: url(img/check.png);
+}
+
+.light-mode ul li span {
+  color: rgb(0, 0, 0);
+}
+
+.light-mode ul li span:active {
+  background-color: rgb(194, 52, 52);
+  color: white;
+}
+
+
+body,.dayNight, .todo-app, ul li, button {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
 }
