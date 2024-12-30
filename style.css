@@ -211,59 +211,52 @@ body.loght-mode {
 body,
 .dayNight,
 .todo-app,
-ul li,
-button {
+ul li {
   transition: background-color 0.5s ease, color 0.5s ease,
     border-color 0.5s ease, transform 0.5s ease;
 }
 
 @media (max-width: 520px) {
-  
   .todo-app {
-    max-width:400px;
+    max-width: 400px;
   }
 
   h1 {
-    font-size:28px;
+    font-size: 28px;
   }
-  
 
   .row {
-     max-width: 100%; 
-     max-height: 50px;
-     
-  } 
+    max-width: 100%;
+    max-height: 50px;
+  }
 
-  input{
-    max-width:100px;
+  input {
+    max-width: 100px;
     font-size: 16px;
   }
 
-  .addBtn{
-    font-size:16px;
-    max-width:100%px;
-    max-height:100%;
-    padding:10px 15px
+  .addBtn {
+    font-size: 16px;
+    max-width: 100%px;
+    max-height: 100%;
+    padding: 10px 15px;
   }
 
-  ul li{
-    font-size:14px;
+  ul li {
+    font-size: 14px;
   }
 
-  ul li span{
+  ul li span {
     font-size: 26px;
   }
 
   ul li::before {
     width: 22px;
-    height:22px;
+    height: 22px;
   }
 
-  ul li.checked::before{
-    height:20px;
-    width:20px;
+  ul li.checked::before {
+    height: 20px;
+    width: 20px;
   }
 }
-
-
-
